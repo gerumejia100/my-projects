@@ -1,0 +1,199 @@
+/* --- General Styles & Color Palette --- */
+:root {
+    --primary-color: #0d47a1; /* Dark Blue */
+    --secondary-color: #1b5e20; /* Dark Green */
+    --accent-color: #4caf50; /* Light Green */
+    --background-color: #e8f5e9; /* Light Green Tint */
+    --text-color: #333;
+    --header-text-color: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+}
+
+nav ul li a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover, .active {
+    background-color: var(--accent-color);
+}
+
+/* --- Main Content Layout --- */
+main {
+    flex-grow: 1; /* Ensures main content pushes footer down */
+    padding: 2rem;
+}
+
+section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the content section */
+}
+
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 0.1rem;
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* --- Works & Projects Section --- */
+.project h3 { color: var(--secondary-color); }
+.matrix-container { margin-bottom: 2rem; }
+.matrix-container h4 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+.matrix-table-wrapper { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; min-width: 500px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+th { background-color: var(--secondary-color); color: white; }
+
+/* --- NEW: CV Section Styles --- */
+.cv-section {
+    margin-bottom: 2rem;
+}
+.cv-section h3 {
+    color: var(--secondary-color);
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.cv-entry {
+    margin-bottom: 1.5rem;
+}
+.cv-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap; /* Allows date to wrap on small screens */
+}
+.cv-title h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+.cv-title .date {
+    font-style: italic;
+    color: #555;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents date from breaking line */
+}
+.cv-info {
+    font-weight: bold;
+    color: #333;
+    margin: 0.25rem 0;
+}
+.cv-section ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+}
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.skills-list li {
+    background-color: #e8f5e9;
+    border: 1px solid var(--accent-color);
+    color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.contact-info p {
+    margin: 0.25rem 0;
+}
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    main { padding: 1rem; }
+    section { padding: 1.5rem; }
+}
+
+.image-container {
+    text-align: center;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- ADDED FOR CELL COLORING --- */
+td.one {
+    background-color: #c8e6c9; /* Light Green */
+}
+
+td.zero {
+    background-color: #ffcdd2; /* Light Red */
+}
