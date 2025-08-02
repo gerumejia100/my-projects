@@ -18,6 +18,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url("Untitled\ design.png"); /* Replace with your image */
+    background-repeat: repeat; /* This makes it repeat like a collage */
+    background-size: 500px 370px; /* Adjust size of each tile */
 }
 
 /* --- Header & Navigation --- */
