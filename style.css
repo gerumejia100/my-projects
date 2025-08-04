@@ -3,7 +3,7 @@
     --primary-color: #0d47a1; /* Dark Blue */
     --secondary-color: #1b5e20; /* Dark Green */
     --accent-color: #4caf50; /* Light Green */
-    --background-color: #292559; 
+    --background-color: #292559; /* Light Green Tint */
     --text-color: #333;
     --header-text-color: #ffffff;
 }
@@ -19,8 +19,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-image: url("Untitled\ design.png"); /* Replace with your image */
-    background-repeat: repeat; /* This makes it repeat like a collage */
-    background-size: 500px 370px; /* Adjust size of each tile */
+      background-repeat: repeat; /* This makes it repeat like a collage */
+      background-size: 500px 370px; /* Adjust size of each tile */
 }
 
 /* --- Header & Navigation --- */
@@ -199,4 +199,30 @@ td.one {
 
 td.zero {
     background-color: #ffcdd2; /* Light Red */
+}
+
+
+figure {
+    text-align: center;
+    margin: 1em 0;
+}
+
+figure img {
+    width: 150%;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+figure img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+figcaption {
+    margin-top: 0.5em;
+    font-style: italic;
+    color: #444;
 }
