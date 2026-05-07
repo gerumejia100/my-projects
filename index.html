@@ -3,51 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | My Blog</title>
-    <link rel="icon" href="RealFano.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <title>Geru Moises Mejia Rojas - Mathematics</title>
+    
+    <style>
+        /* COLOR VARIABLES: Change these to tweak the exact shades */
+        :root {
+            --bg-color: #f5f5dc; /* Beige "scratch paper" color */
+            --text-color: #111111; /* Almost black for better readability */
+            --nav-bg: #e8e8cc; /* Slightly darker beige for the menu */
+            --link-color: #0055cc; /* Classic blue for links */
+            --card-bg: #fffff0; /* Ivory for content boxes */
+        }
+
+        /* DARK MODE VARIABLES: These activate when the dark mode button is clicked */
+        [data-theme="dark"] {
+            --bg-color: #1e1e1e; /* Dark grey/black */
+            --text-color: #f5f5dc; /* Beige text on dark background */
+            --nav-bg: #2a2a2a; 
+            --link-color: #66b3ff; /* Light blue for dark mode links */
+            --card-bg: #2d2d2d;
+        }
+
+        /* GLOBAL STYLES */
+        body {
+            font-family: "Times New Roman", Times, serif; /* Font choice */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Centers all content as requested */
+            transition: all 0.3s ease; /* Smooth transition for dark mode */
+        }
+
+        /* STICKY NAVIGATION MENU */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--nav-bg);
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000; /* Keeps menu on top of other content */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT CONTAINER */
+        main {
+            max-width: 900px; /* Keeps content from stretching too wide on PC */
+            margin: 0 auto; /* Centers the main container */
+            padding: 20px;
+        }
+
+        /* SECTION STYLING */
+        section {
+            background-color: var(--card-bg);
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        /* UNORDERED LIST CENTERING (Keeps bullets aligned while centered) */
+        ul {
+            display: inline-block;
+            text-align: left; /* Text inside list is left-aligned for readability */
+            margin: 0 auto;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: var(--link-color);
+        }
+
+        /* POSTER IMAGES */
+        .poster-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--text-color);
+            margin-top: 15px;
+        }
+
+        /* BUTTON STYLING (Dark Mode Toggle, Resume Download) */
+        button, .btn {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover, .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* FOOTER STYLING */
+        footer {
+            background-color: var(--nav-bg);
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Geru's Portfolio</h1>
-    </header>
-
     <nav>
-        <ul>
-            <li><a href="index.html">About Me</a></li>
-            <li><a href="works.html">Works</a></li>
-            <li><a href="notes.html">Notes</a></li>
-            <li><a href="proofs.html">Proofs</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="puzzles.html">Puzzles</a></li>
-        </ul>
+        <a href="#about">About Me</a>
+        <a href="#resume">Resume</a>
+        <a href="#research">Research</a>
+        <a href="#notes">Notes</a>
+        <a href="#interesting">Interesting Content</a>
+        <a href="#puzzles">Puzzles</a>
+        <button onclick="toggleTheme()" id="theme-btn">Switch to Dark Mode</button>
     </nav>
+
+    <header style="padding: 40px 20px;">
+        <h1>Geru Moises Mejia Rojas</h1>
+        <p>Mathematics Major & Professional Tutor</p>
+    </header>
 
     <main>
         <section id="about">
-            <h2>🙋‍♂️ About Me</h2>
-            <p>Hello! I am Geru and I am currently studying Mathematics at UWF.</p>
-            <hr>
+            <h2>About Me</h2>
+            <p>
+                Hello! I am a junior-level mathematics major at the University of West Florida. 
+                I have a deep passion for abstract algebra, combinatorial design theory, and number theory. 
+                Alongside my studies, I am an active officer for the Math Association and work as a professional 
+                mathematics tutor, helping students master complex coursework.
+            </p>
+        </section>
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <p>You can view a summary of my academic and professional experience below, or download my full CV.</p>
+            <ul>
+                <li><strong>Education:</strong> University of West Florida (Mathematics)</li>
+                <li><strong>Experience:</strong> Mathematics Tutor, Math Association Treasurer</li>
+                <li><strong>Skills:</strong> Python, SageMath, Mathematica, LaTeX</li>
+            </ul>
+            <br>
+            <a href="YOUR_RESUME_LINK.pdf" class="btn" target="_blank">Download Resume (PDF)</a>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>Below is a log of my current and past research projects.</p>
             
-            <figure>
-                <img src="ImageTT.jpg" alt="Runner-up Table Tennis Intramural 2025" style="max-width: 300px; border-radius: 10px;">
-                <figcaption>Intramural 2025 Table Tennis runner-up</figcaption>
-            </figure>
-            <hr>
-            <figure>
-                <img src="Screenshot 2025-08-03 at 19.17.10.png" alt="Mock presentation" style="max-width: 300px; border-radius: 10px;">
-                <figcaption>Mock presentations at HMCSE</figcaption>
-            </figure>
-            <hr>
-            <figure>
-                <img src="IMG_7026.jpeg" alt="Symposyum SURP 2025" style="max-width: 300px; border-radius: 10px;">
-                <figcaption>Final presentation</figcaption>
-            </figure>
-            <hr>
+            <ul>
+                <li>
+                    <strong>OUR_s26: Difference Families in Z37</strong><br>
+                    Collaborative research project at UWF. <br>
+                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;"> 
+                    </li>
+                
+                <li>
+                    <strong>Constructing Homology Functors and Tensor Products</strong><br>
+                    Spring 2026 term project.<br>
+                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
+                </li>
+
+                <li>
+                    <strong>Summer Undergraduate Research Program (SURP)</strong><br>
+                    Focused on Combinatorial Design Theory (2025).<br>
+                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
+                </li>
+            </ul>
+        </section>
+
+        <section id="notes">
+            <h2>Course Notes</h2>
+            <p>Here you can find my digitized notes and study materials. Links redirect to Google Drive.</p>
+            <ul>
+                <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Abstract Algebra (Groups, Rings, and Modules)</a></li>
+                <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Number Theory</a></li>
+                <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Topology</a></li>
+                <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Real Analysis</a></li>
+            </ul>
+        </section>
+
+        <section id="interesting">
+            <h2>Interesting Content</h2>
+            <p>A curated collection of mathematical resources I recommend.</p>
+            <ul>
+                <li><strong>Recommended Books:</strong> 
+                    <em>Insert Book Title Here</em> by Author
+                </li>
+                <li><strong>Videos:</strong> 
+                    <a href="#" target="_blank">Insert Video Title/Link</a>
+                </li>
+                <li><strong>Articles & Papers:</strong> 
+                    <a href="#" target="_blank">Insert Academic Paper Title</a>
+                </li>
+                <li><strong>Math News:</strong> 
+                    <a href="#" target="_blank">Recent developments in Combinatorics</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="puzzles">
+            <h2>Puzzles</h2>
+            <p>Challenge yourself with these mathematical puzzles.</p>
+            
+            <h3>Geometry Puzzles</h3>
+            <ul>
+                <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
+                </ul>
+
+            <h3>Logic Puzzles</h3>
+            <ul>
+                <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
+                </ul>
+
+            <h3>Number Puzzles</h3>
+            <ul>
+                <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
+                </ul>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2026 Geru Moises Mejia Rojas. All rights reserved.</p>
+        <p>Contact: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </footer>
 
+    <script>
+        // This function switches the website between light (beige) and dark modes
+        function toggleTheme() {
+            // Get the HTML document element
+            const htmlTag = document.documentElement;
+            // Get the button element to change its text
+            const themeBtn = document.getElementById('theme-btn');
+
+            // If it's currently dark mode, switch to light
+            if (htmlTag.getAttribute('data-theme') === 'dark') {
+                htmlTag.removeAttribute('data-theme');
+                themeBtn.innerText = 'Switch to Dark Mode';
+            } 
+            // Otherwise, switch to dark mode
+            else {
+                htmlTag.setAttribute('data-theme', 'dark');
+                themeBtn.innerText = 'Switch to Light Mode';
+            }
+        }
+    </script>
 </body>
 </html>
