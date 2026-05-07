@@ -6,33 +6,33 @@
     <title>Geru Moises Mejia Rojas - Mathematics</title>
     
     <style>
-        /* COLOR VARIABLES: Change these to tweak the exact shades */
+        /* COLOR VARIABLES */
         :root {
             --bg-color: #f5f5dc; /* Beige "scratch paper" color */
-            --text-color: #111111; /* Almost black for better readability */
+            --text-color: #111111; 
             --nav-bg: #e8e8cc; /* Slightly darker beige for the menu */
-            --link-color: #0055cc; /* Classic blue for links */
+            --link-color: #0055cc; 
             --card-bg: #fffff0; /* Ivory for content boxes */
         }
 
-        /* DARK MODE VARIABLES: These activate when the dark mode button is clicked */
+        /* DARK MODE VARIABLES */
         [data-theme="dark"] {
-            --bg-color: #1e1e1e; /* Dark grey/black */
-            --text-color: #f5f5dc; /* Beige text on dark background */
+            --bg-color: #1e1e1e; 
+            --text-color: #f5f5dc; 
             --nav-bg: #2a2a2a; 
-            --link-color: #66b3ff; /* Light blue for dark mode links */
+            --link-color: #66b3ff; 
             --card-bg: #2d2d2d;
         }
 
         /* GLOBAL STYLES */
         body {
-            font-family: "Times New Roman", Times, serif; /* Font choice */
+            font-family: "Times New Roman", Times, serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            text-align: center; /* Centers all content as requested */
-            transition: all 0.3s ease; /* Smooth transition for dark mode */
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
         /* STICKY NAVIGATION MENU */
@@ -40,12 +40,13 @@
             position: sticky;
             top: 0;
             background-color: var(--nav-bg);
-            padding: 15px;
+            padding: 15px 70px 15px 15px; /* Extra padding on right so links don't overlap switch */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000; /* Keeps menu on top of other content */
+            z-index: 1000;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             gap: 15px;
         }
 
@@ -60,10 +61,67 @@
             text-decoration: underline;
         }
 
+        /* DARK MODE TOGGLE SWITCH (Top Right) */
+        .theme-switch-wrapper {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%); /* Perfectly centers it vertically */
+        }
+
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 54px;
+            height: 28px;
+        }
+
+        .theme-switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #d1d1b5; /* Darker beige for light mode track */
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "☀️"; /* Sun icon for light mode */
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        input:checked + .slider {
+            background-color: #555; /* Dark grey for dark mode track */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+            content: "🌙"; /* Moon icon for dark mode */
+            background-color: #222;
+        }
+
         /* MAIN CONTENT CONTAINER */
         main {
-            max-width: 900px; /* Keeps content from stretching too wide on PC */
-            margin: 0 auto; /* Centers the main container */
+            max-width: 900px; 
+            margin: 0 auto; 
             padding: 20px;
         }
 
@@ -80,10 +138,10 @@
             margin-top: 0;
         }
 
-        /* UNORDERED LIST CENTERING (Keeps bullets aligned while centered) */
+        /* UNORDERED LIST CENTERING */
         ul {
             display: inline-block;
-            text-align: left; /* Text inside list is left-aligned for readability */
+            text-align: left; 
             margin: 0 auto;
         }
 
@@ -103,8 +161,8 @@
             margin-top: 15px;
         }
 
-        /* BUTTON STYLING (Dark Mode Toggle, Resume Download) */
-        button, .btn {
+        /* BUTTON STYLING (Resume Download) */
+        .btn {
             background-color: var(--text-color);
             color: var(--bg-color);
             border: none;
@@ -117,7 +175,7 @@
             display: inline-block;
         }
 
-        button:hover, .btn:hover {
+        .btn:hover {
             opacity: 0.8;
         }
 
@@ -138,7 +196,13 @@
         <a href="#notes">Notes</a>
         <a href="#interesting">Interesting Content</a>
         <a href="#puzzles">Puzzles</a>
-        <button onclick="toggleTheme()" id="theme-btn">Switch to Dark Mode</button>
+        
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox" title="Toggle Dark Mode">
+                <input type="checkbox" id="checkbox" onchange="toggleTheme(this)" />
+                <div class="slider"></div>
+            </label>
+        </div>
     </nav>
 
     <header style="padding: 40px 20px;">
@@ -178,7 +242,7 @@
                     <strong>OUR_s26: Difference Families in Z37</strong><br>
                     Collaborative research project at UWF. <br>
                     <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;"> 
-                    </li>
+                </li>
                 
                 <li>
                     <strong>Constructing Homology Functors and Tensor Products</strong><br>
@@ -231,17 +295,17 @@
             <h3>Geometry Puzzles</h3>
             <ul>
                 <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
-                </ul>
+            </ul>
 
             <h3>Logic Puzzles</h3>
             <ul>
                 <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
-                </ul>
+            </ul>
 
             <h3>Number Puzzles</h3>
             <ul>
                 <li>Puzzle 1: <a href="#">Link to puzzle or PDF</a></li>
-                </ul>
+            </ul>
         </section>
     </main>
 
@@ -251,22 +315,17 @@
     </footer>
 
     <script>
-        // This function switches the website between light (beige) and dark modes
-        function toggleTheme() {
-            // Get the HTML document element
+        // Triggered by the switch to turn dark mode on or off
+        function toggleTheme(checkboxElement) {
             const htmlTag = document.documentElement;
-            // Get the button element to change its text
-            const themeBtn = document.getElementById('theme-btn');
-
-            // If it's currently dark mode, switch to light
-            if (htmlTag.getAttribute('data-theme') === 'dark') {
-                htmlTag.removeAttribute('data-theme');
-                themeBtn.innerText = 'Switch to Dark Mode';
-            } 
-            // Otherwise, switch to dark mode
-            else {
+            
+            // If the switch is checked, apply dark mode
+            if (checkboxElement.checked) {
                 htmlTag.setAttribute('data-theme', 'dark');
-                themeBtn.innerText = 'Switch to Light Mode';
+            } 
+            // If unchecked, remove dark mode
+            else {
+                htmlTag.removeAttribute('data-theme');
             }
         }
     </script>
