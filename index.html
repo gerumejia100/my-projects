@@ -8,6 +8,12 @@
     <link rel="icon" type="image/png" href="fanooo.png">
     
     <style>
+        /* SCROLL FIX FOR STICKY MENU */
+        html {
+            scroll-behavior: smooth; /* Deslizamiento suave */
+            scroll-padding-top: 80px; /* Evita que el menú tape el título */
+        }
+
         /* COLOR VARIABLES */
         :root {
             --bg-color: #f5f5dc; /* Beige "scratch paper" color */
@@ -42,7 +48,7 @@
             position: sticky;
             top: 0;
             background-color: var(--nav-bg);
-            padding: 15px 70px 15px 15px; /* Extra padding on right so links don't overlap switch */
+            padding: 15px 70px 15px 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
             display: flex;
@@ -63,12 +69,12 @@
             text-decoration: underline;
         }
 
-        /* DARK MODE TOGGLE SWITCH (Top Right) */
+        /* DARK MODE TOGGLE SWITCH */
         .theme-switch-wrapper {
             position: absolute;
             right: 20px;
             top: 50%;
-            transform: translateY(-50%); /* Perfectly centers it vertically */
+            transform: translateY(-50%);
         }
 
         .theme-switch {
@@ -88,14 +94,14 @@
             position: absolute;
             cursor: pointer;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #d1d1b5; /* Darker beige for light mode track */
+            background-color: #d1d1b5;
             transition: .4s;
             border-radius: 34px;
         }
 
         .slider:before {
             position: absolute;
-            content: "☀️"; /* Sun icon for light mode */
+            content: "☀️";
             font-size: 14px;
             display: flex;
             align-items: center;
@@ -111,12 +117,12 @@
         }
 
         input:checked + .slider {
-            background-color: #555; /* Dark grey for dark mode track */
+            background-color: #555;
         }
 
         input:checked + .slider:before {
             transform: translateX(26px);
-            content: "🌙"; /* Moon icon for dark mode */
+            content: "🌙";
             background-color: #222;
         }
 
@@ -140,7 +146,6 @@
             margin-top: 0;
         }
 
-        /* UNORDERED LIST CENTERING */
         ul {
             display: inline-block;
             text-align: left; 
@@ -155,7 +160,64 @@
             color: var(--link-color);
         }
 
-        /* POSTER IMAGES */
+        /* THEOREM STYLING */
+        .theorem-container {
+            background-color: var(--nav-bg); 
+            border-left: 5px solid var(--link-color);
+            padding: 20px 30px;
+            margin: 20px auto 40px auto;
+            border-radius: 4px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .theorem-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--link-color);
+            font-weight: bold;
+        }
+
+        .theorem-statement {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* DROPDOWN (DETAILS/SUMMARY) STYLING */
+        details {
+            background-color: rgba(0, 0, 0, 0.03);
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        [data-theme="dark"] details {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            outline: none;
+            padding: 5px 0;
+        }
+
+        summary:hover {
+            color: var(--link-color);
+        }
+
+        details > p, details > ul {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
         .poster-img {
             max-width: 100%;
             height: auto;
@@ -163,7 +225,6 @@
             margin-top: 15px;
         }
 
-        /* BUTTON STYLING (Resume Download) */
         .btn {
             background-color: var(--text-color);
             color: var(--bg-color);
@@ -181,7 +242,27 @@
             opacity: 0.8;
         }
 
-        /* FOOTER STYLING */
+        /* QUOTE STYLING */
+        .quote-container {
+            font-size: 1.2rem;
+            font-style: italic;
+            padding: 20px;
+            border-top: 2px solid var(--text-color);
+            border-bottom: 2px solid var(--text-color);
+            margin: 50px auto 20px auto;
+            max-width: 80%;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 1rem;
+        }
+
         footer {
             background-color: var(--nav-bg);
             padding: 20px;
@@ -213,6 +294,12 @@
     </header>
 
     <main>
+        <!-- RANDOM THEOREM SECTION -->
+        <div id="theorem-container" class="theorem-container">
+            <span id="theorem-title" class="theorem-title">Loading Theorem...</span>
+            <div id="theorem-statement" class="theorem-statement"></div>
+        </div>
+
         <section id="about">
             <h2>About Me</h2>
             <p>
@@ -228,48 +315,45 @@
             <p>You can view a summary of academic and professional experience below, or read my full CV.</p>
             <ul>
                 <li><strong>Education:</strong> University of West Florida (Mathematics)</li>
-                <li><strong>Experience:</strong> Mathematics Tutor, Peer Mentor, Succes Leader, Math Association Vice President</li>
+                <li><strong>Experience:</strong> Mathematics Tutor, Peer Mentor, Success Leader, Math Association Vice President</li>
                 <li><strong>Skills:</strong> Python, SageMath, LaTeX.</li>
                 <li><strong>Languages:</strong> English and Spanish.</li>
             </ul>
-            <br>
+            <br><br>
             <a href="https://drive.google.com/file/d/19ywgaBPdJl-icaQ0fBviwf0WAlqRPGnE/view?usp=drive_link" class="btn" target="_blank">Read Full Resume</a>
         </section>
 
         <section id="research">
             <h2>Research</h2>
-            <p>Below is a summary of our current and past research projects.</p>
+            <p>Below is a summary of our current and past research projects. Click on a project to expand its details.</p>
             
-            <ul>
-                <li>
-                    <strong>SURP 2025: Random Construction of Steiner Systems</strong><br>
-                    We wrote several programs to randomly generate these incidence structures using different algorithms in Python that includes dot product between rows of binary incidence matrices and probabilistic analysis to yield better results. Then in C we utilized nauty and traces library to find structures up to isomorphism utilizing canonical labeling algorithm. Additionally, we studied and defined several concepts and proved various theorems related to Design Theory, Algebra and Geometry. The incidence matrices were saved on a database on our website. <br>
-                    Read paper and poster here: <a href="https://drive.google.com/drive/folders/1tpNS1h5Gha62R3pXAUpgh_cxCttosB7t?usp=sharing" target="_blank">Documents and Code</a>
-                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;"> 
-                </li>
+            <details>
+                <summary>SURP 2025: Random Construction of Steiner Systems</summary>
+                <p>We wrote several programs to randomly generate these incidence structures using different algorithms in Python that includes dot product between rows of binary incidence matrices and probabilistic analysis to yield better results. Then in C we utilized nauty and traces library to find structures up to isomorphism utilizing canonical labeling algorithm. Additionally, we studied and defined several concepts and proved various theorems related to Design Theory, Algebra and Geometry. The incidence matrices were saved on a database on our website.</p>
+                <p>Read paper and poster here: <a href="https://drive.google.com/drive/folders/1tpNS1h5Gha62R3pXAUpgh_cxCttosB7t?usp=sharing" target="_blank">Documents and Code</a></p>
+                <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;"> 
+            </details>
                 
-                <li>
-                    <strong>SURP 2026: Constructing Homology Functors and Tensor Products</strong><br>
-                    Algebraic topology bridges continuous spaces and discrete algebra. This project uses homological algebra to construct homology functors, translating complex geometric properties, like topological “holes,” into solvable algebraic formats.
-Methodology: Over a twelve-week progression, the focus shifts from point-set topology and the fundamental group to the algebraic prerequisites of homology, specifically emphasizing module theory and tensor products. Weekly mentor meetings will verify all theoretical proofs. Research Objectives:
-1. Master the fundamental group.
-2. Construct modules and the tensor product to bridge abstract algebra and
-homological algebra.
-3. Apply homology functors and chain complexes to compute surface homology groups.
-Progress is assessed weekly through independent proofs and calculations. The
-final results will be given through both a professionally typed LaTeX document serving as a
-rigorous record of all explored theories, and a poster presentation at the Symposium. <br>
-                    Read paper and poster here: <a href="https://drive.google.com/drive/folders/1zjmd9VDiQ08OU0v-Sm0iQlmeKLBHcoX5?usp=sharing" target="_blank">Documents</a>
-                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
-                </li>
+            <details>
+                <summary>SURP 2026: Constructing Homology Functors and Tensor Products</summary>
+                <p>Algebraic topology bridges continuous spaces and discrete algebra. This project uses homological algebra to construct homology functors, translating complex geometric properties, like topological “holes,” into solvable algebraic formats.</p>
+                <p>Methodology: Over a twelve-week progression, the focus shifts from point-set topology and the fundamental group to the algebraic prerequisites of homology, specifically emphasizing module theory and tensor products. Weekly mentor meetings will verify all theoretical proofs. Research Objectives:</p>
+                <ol style="text-align: left; margin: 0 auto; display: inline-block;">
+                    <li>Master the fundamental group.</li>
+                    <li>Construct modules and the tensor product to bridge abstract algebra and homological algebra.</li>
+                    <li>Apply homology functors and chain complexes to compute surface homology groups.</li>
+                </ol>
+                <p>Progress is assessed weekly through independent proofs and calculations. The final results will be given through both a professionally typed LaTeX document serving as a rigorous record of all explored theories, and a poster presentation at the Symposium.</p>
+                <p>Read paper and poster here: <a href="https://drive.google.com/drive/folders/1zjmd9VDiQ08OU0v-Sm0iQlmeKLBHcoX5?usp=sharing" target="_blank">Documents</a></p>
+                <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
+            </details>
 
-                <li>
-                    <strong>Fall 2026: Difference families to construct Steiner Systems</strong><br>
-                    In this project our goal is to construct difference families in Zn with the goal of using them to create Steiner systems that admit a cyclic automorphism group. The difference families can be constructed by brute force using computers, however, we will use theory to make our programs more efficient. We will first focus on Zp, for p prime, and then we will move to more general n. We will be borrowing techniques from group theory, number theory, and finite geometry. In particular, we will be studying and applying Cyclotomic and Fourier analysis. For the programming, we will be using Python, SageMath, and nauty. <br>
-                    Read paper and poster here: <a href="https://drive.google.com/drive/folders/1E7yc2ckViEO_2wTEWv_V98F_G4fEebZ1?usp=sharing" target="_blank">Documents and Code</a>
-                    <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
-                </li>
-            </ul>
+            <details>
+                <summary>Fall 2026: Difference families to construct Steiner Systems</summary>
+                <p>In this project our goal is to construct difference families in Zn with the goal of using them to create Steiner systems that admit a cyclic automorphism group. The difference families can be constructed by brute force using computers, however, we will use theory to make our programs more efficient. We will first focus on Zp, for p prime, and then we will move to more general n. We will be borrowing techniques from group theory, number theory, and finite geometry. In particular, we will be studying and applying Cyclotomic and Fourier analysis. For the programming, we will be using Python, SageMath, and nauty.</p>
+                <p>Read paper and poster here: <a href="https://drive.google.com/drive/folders/1E7yc2ckViEO_2wTEWv_V98F_G4fEebZ1?usp=sharing" target="_blank">Documents and Code</a></p>
+                <img src="placeholder-poster.jpg" alt="Insert Poster Image Here" class="poster-img" style="display:none;">
+            </details>
         </section>
 
         <section id="notes">
@@ -279,126 +363,185 @@ rigorous record of all explored theories, and a poster presentation at the Sympo
                 <li><a href="https://drive.google.com/drive/folders/1sVSshdcSrR8KMo2rM9nfffFWnlmzJHFo?usp=sharing" target="_blank">Abstract Algebra</a></li>
                 <li><a href="https://drive.google.com/drive/folders/18q3MiqB_3FRsUqmY34P9_s0nYyiI8nz3?usp=sharing" target="_blank">Number Theory</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1zjmd9VDiQ08OU0v-Sm0iQlmeKLBHcoX5?usp=sharing" target="_blank">Topology</a></li>
-                <!-- <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Real Analysis</a></li> -->
                 <li><a href="https://terrytao.wordpress.com/career-advice/" target="_blank">Career Advice by Terrence Tao</a></li>
             </ul>
         </section>
 
         <section id="interesting">
             <h2>Interesting Content</h2>
-            <p>A collection of mathematical resources we recommend.</p>
-            <ul>
-                <li>
-                    <strong>Books:</strong> <br>
-                    <ul>
-                        <li><em>Fermat's Enigma</em> by Simon Singh</li>
-                        <li><em>Introduction to Mathematical Structures</em> by Steven Galovich</li>
-                        <li><em>Topology</em> by James Munkres</li>
-                        <li><em>Abstract Algebra</em> by Dummit and Foote</li>
-                        <li><em>Elementary Number Theory</em> by James Strayer</li>
-                    </ul>
-                </li>
-                <li>    
-                    <strong>Videos:</strong> <br>
-                    <ul>
-                    <li><a href="https://www.youtube.com/watch?v=YsEcpS-hyXw&t=2432s&pp=ygUPaGlzdG9yeSBvZiBtYXRo" target="_blank">
-                        History of Math</a> by John Dersch
-                    </li>
+            <p>A collection of mathematical resources we recommend. Click to expand categories.</p>
+            
+            <details>
+                <summary>Books</summary>
+                <ul>
+                    <li><em>Fermat's Enigma</em> by Simon Singh</li>
+                    <li><em>Introduction to Mathematical Structures</em> by Steven Galovich</li>
+                    <li><em>Topology</em> by James Munkres</li>
+                    <li><em>Abstract Algebra</em> by Dummit and Foote</li>
+                    <li><em>Elementary Number Theory</em> by James Strayer</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Videos</summary>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=YsEcpS-hyXw&t=2432s&pp=ygUPaGlzdG9yeSBvZiBtYXRo" target="_blank">History of Math</a> by John Dersch</li>
                     <li><a href="https://www.youtube.com/watch?v=OxGsU8oIWjY&pp=ygUNaGlsYmVydCBob3RlbA%3D%3D" target="_blank">Hilbert's hotel</a> by Derek Muller</li>
                     <li><a href="https://www.sophie-germain.com/250/#talks" target="_blank">Sophie German's work</a> by Oxford University</li>
-                    </ul>
-                </li>
-                <li><strong>Articles & Papers:</strong> <br>
-                    <ul>
-                        <li><a href="https://ericmoorhouse.org/handouts/projective_planes.pdf" target="_blank">Projective Planes</a> by Eric Moorhouse</li>
-                        <li><a href="https://math.uchicago.edu/~may/REU2021/REUPapers/Zhang,Emily.pdf" target="_blank">Law of Quadratic Reciprocity</a> by Emily Zhang</li>
-                    </ul>
-                </li>
-                <li><strong>Math News:</strong> <br>
-                    <ul>
-                    <li>
-                    <a href="https://www.quantamagazine.org/mathematics" target="_blank">
-                        Quanta Magazine articles
-                    </a>
-                    </li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Articles & Papers</summary>
+                <ul>
+                    <li><a href="https://ericmoorhouse.org/handouts/projective_planes.pdf" target="_blank">Projective Planes</a> by Eric Moorhouse</li>
+                    <li><a href="https://math.uchicago.edu/~may/REU2021/REUPapers/Zhang,Emily.pdf" target="_blank">Law of Quadratic Reciprocity</a> by Emily Zhang</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Math News</summary>
+                <ul>
+                    <li><a href="https://www.quantamagazine.org/mathematics" target="_blank">Quanta Magazine articles</a></li>
                     <li><a href="https://www.ias.edu/news/2026-abel-prize-awarded-past-member-gerd-faltings" target="_blank">Abel Prize 2026</a></li>
-                    </ul>
-                </li>
-            </ul>
+                </ul>
+            </details>
         </section>
 
         <section id="puzzles">
             <h2>Puzzles</h2>
-            <p>Challenging mathematical puzzles.</p>
+            <p>Challenging mathematical puzzles. Click on the categories below to reveal them.</p>
             
-            <h3>Geometry Puzzles</h3>
-            <ul>
-                <li>Puzzle 1: In how many different ways can you arrange 4 points in a plane such that there exist ecactly 2 different distances between any 2 points?</li>
-            </ul>
+            <details>
+                <summary>Geometry Puzzles</summary>
+                <ul>
+                    <li>Puzzle 1: In how many different ways can you arrange 4 points in a plane such that there exist exactly 2 different distances between any 2 points?</li>
+                </ul>
+            </details>
 
-            <h3>Logic Puzzles</h3>
-            <ul>
-                <li>Puzzle 1: There are 12 coins. One of them is false; it weights differently. It is not known, if the false coin is heavier or lighter than the right coins. How to find the false coin by three weighs on a simple scale?</li>
-                <li>
-                    Puzzle 2: Is it possible to obatain a rational number when an irrational number is raised to an irrational number?
-                </li>
-                <li>Puzzle 3: A cat is hiding in one of five boxes that are lined up in a row. The boxes are numbered 1 to 5. Each night the cat hides in an adjacent box, exactly one number away. Each morning you can open a single box to try to find the cat. Can you win this game of hide and seek? What is your strategy to find the cat?
-                </li>
-            </ul>
+            <details>
+                <summary>Logic Puzzles</summary>
+                <ul>
+                    <li>Puzzle 1: There are 12 coins. One of them is false; it weights differently. It is not known, if the false coin is heavier or lighter than the right coins. How to find the false coin by three weighs on a simple scale?</li>
+                    <li>Puzzle 2: Is it possible to obtain a rational number when an irrational number is raised to an irrational number?</li>
+                    <li>Puzzle 3: A cat is hiding in one of five boxes that are lined up in a row. The boxes are numbered 1 to 5. Each night the cat hides in an adjacent box, exactly one number away. Each morning you can open a single box to try to find the cat. Can you win this game of hide and seek? What is your strategy to find the cat?</li>
+                </ul>
+            </details>
 
-            <h3>Number Puzzles</h3>
-            <ul>
-                <li>Puzzle 1: Fermat, computers, and a smart boy:
-                    A computer scientist claims that he proved somehow that the Fermat theorem is correct for the following 3 numbers:
-
-                    \[x=2233445566
-                    \]
-                    \[y=7788990011
-                    \]
-                    \[z=9988776655.
-                    \]
-
-                    He announces these 3 numbers and calls for a press conference where he is going to present the value of \[n\] (to show that
-
-                    \[x^n + y^n = z^n\]
-
-                    and that the guy from Princeton was wrong). As the press conference starts, a 10-years old boy raises his hand and says that the respectable scientist has made a mistake and the Fermat theorem cannot hold for those 3 numbers. The scientist checks his computer calculations and finds a bug.
-
-                    How did the boy figure out that the scientist was wrong?
-                </li>
-                <li>Puzzle 2: Fifteen pirates steal a sack of gold coins. Each coin is of equal
-                    denomination. The pirates attempt to divide the coins evenly but find that
-                    two coins are left over. A quarrel over these two coins erupts and one
-                    pirate is killed. Another attempt is made to divide the coins evenly but this
-                    time one coin is left over. Another quarrel erupts and another pirate is
-                    killed. A third attempt to divide the coins evenly succeeds. Find the
-                    smallest number of gold coins that could have been in the sack initially.
-                </li>
-            </ul>
+            <details>
+                <summary>Number Puzzles</summary>
+                <ul>
+                    <li>Puzzle 1: Fermat, computers, and a smart boy:<br><br>
+                        A computer scientist claims that he proved somehow that the Fermat theorem is correct for the following 3 numbers:
+                        \[x=2233445566\]
+                        \[y=7788990011\]
+                        \[z=9988776655.\]
+                        He announces these 3 numbers and calls for a press conference where he is going to present the value of \[n\] (to show that
+                        \[x^n + y^n = z^n\]
+                        and that the guy from Princeton was wrong). As the press conference starts, a 10-years old boy raises his hand and says that the respectable scientist has made a mistake and the Fermat theorem cannot hold for those 3 numbers. The scientist checks his computer calculations and finds a bug.<br><br>
+                        How did the boy figure out that the scientist was wrong?
+                    </li>
+                    <br>
+                    <li>Puzzle 2: Fifteen pirates steal a sack of gold coins. Each coin is of equal
+                        denomination. The pirates attempt to divide the coins evenly but find that
+                        two coins are left over. A quarrel over these two coins erupts and one
+                        pirate is killed. Another attempt is made to divide the coins evenly but this
+                        time one coin is left over. Another quarrel erupts and another pirate is
+                        killed. A third attempt to divide the coins evenly succeeds. Find the
+                        smallest number of gold coins that could have been in the sack initially.
+                    </li>
+                </ul>
+            </details>
         </section>
+
+        <!-- RANDOM QUOTE SECTION -->
+        <section id="quote-container" class="quote-container">
+            <span id="quote-text">"Loading quote..."</span>
+            <span id="quote-author" class="quote-author"></span>
+        </section>
+
     </main>
 
     <footer>
-        <!-- <p>&copy; 2026 Geru Mejia.</p> -->
         <p>Contact: <a href="mailto:your.gerumejia100@gmail.com">gerumejia100@gmail.com</a></p>
     </footer>
 
-
+    <!-- MathJax for rendering LaTeX -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-        // Triggered by the switch to turn dark mode on or off
+        // DARK MODE TOGGLE
         function toggleTheme(checkboxElement) {
             const htmlTag = document.documentElement;
-            
-            // If the switch is checked, apply dark mode
             if (checkboxElement.checked) {
                 htmlTag.setAttribute('data-theme', 'dark');
-            } 
-            // If unchecked, remove dark mode
-            else {
+            } else {
                 htmlTag.removeAttribute('data-theme');
             }
         }
+
+        // RANDOM THEOREM GENERATOR
+        const theorems = [
+            {
+                title: "Lagrange's Theorem (Group Theory)",
+                statement: "For any finite group \\(G\\), the order (number of elements) of every subgroup \\(H\\) of \\(G\\) divides the order of \\(G\\). That is: \\[ |G| = [G : H] \\cdot |H| \\]"
+            },
+            {
+                title: "Fermat's Little Theorem (Number Theory)",
+                statement: "If \\(p\\) is a prime number, then for any integer \\(a\\), the number \\(a^p - a\\) is an integer multiple of \\(p\\). In the notation of modular arithmetic: \\[ a^p \\equiv a \\pmod p \\]"
+            },
+            {
+                title: "Fisher's Inequality (Design Theory)",
+                statement: "In any 2-design with \\(v\\) points and \\(b\\) blocks, the number of blocks is at least the number of points: \\[ b \\ge v \\]"
+            },
+            {
+                title: "Euler's Formula (Topology / Graph Theory)",
+                statement: "For any connected planar graph with \\(V\\) vertices, \\(E\\) edges, and \\(F\\) faces, the following relation holds: \\[ V - E + F = 2 \\]"
+            },
+            {
+                title: "Fundamental Theorem of Homomorphisms (Abstract Algebra)",
+                statement: "Let \\( \\phi: G \\to H \\) be a group homomorphism. Then the image of \\( \\phi \\) is isomorphic to the quotient group \\( G / \\ker(\\phi) \\). That is: \\[ G / \\ker(\\phi) \\cong \\text{im}(\\phi) \\]"
+            }
+        ];
+
+        function displayRandomTheorem() {
+            const randomIndex = Math.floor(Math.random() * theorems.length);
+            const selectedTheorem = theorems[randomIndex];
+            
+            document.getElementById('theorem-title').innerText = selectedTheorem.title;
+            document.getElementById('theorem-statement').innerHTML = selectedTheorem.statement;
+
+            // Ensure MathJax renders the newly inserted LaTeX formulas
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                MathJax.typesetPromise([document.getElementById('theorem-container')]).catch(function (err) {
+                    console.error('MathJax error: ', err.message);
+                });
+            }
+        }
+
+        // RANDOM QUOTE GENERATOR
+        const quotes = [
+            { text: "Pure mathematics is, in its way, the poetry of logical ideas.", author: "Albert Einstein" },
+            { text: "Mathematics is the most beautiful and most powerful creation of the human spirit.", author: "Stefan Banach" },
+            { text: "The essence of mathematics lies in its freedom.", author: "Georg Cantor" },
+            { text: "A mathematician who is not also something of a poet will never be a complete mathematician.", author: "Karl Weierstrass" },
+            { text: "Nature is written in mathematical language.", author: "Galileo Galilei" },
+            { text: "There is no branch of mathematics, however abstract, which may not some day be applied to phenomena of the real world.", author: "Nikolai Lobachevsky" },
+            { text: "In mathematics the art of proposing a question must be held of higher value than solving it.", author: "Georg Cantor" }
+        ];
+
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const selectedQuote = quotes[randomIndex];
+            
+            document.getElementById('quote-text').innerText = `"${selectedQuote.text}"`;
+            document.getElementById('quote-author').innerText = `— ${selectedQuote.author}`;
+        }
+
+        // Execute functions when the page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            displayRandomTheorem();
+            displayRandomQuote();
+        });
     </script>
 </body>
 </html>
