@@ -560,6 +560,106 @@
             {
                 title: "Cauchy-Schwarz Inequality (Linear Algebra)",
                 statement: "For all vectors \\(u\\) and \\(v\\) of an inner product space, the absolute value of the inner product is less than or equal to the product of the norms: \\[ |\\langle u, v \\rangle|^2 \\le \\langle u, u \\rangle \\cdot \\langle v, v \\rangle \\]"
+            },
+            {
+                title: "Fundamental Theorem of Calculus (Real Analysis)",
+                statement: "If \\(f\\) is continuous on the interval \\([a, b]\\) and \\(F\\) is an antiderivative of \\(f\\), then the definite integral is given by: \\[ \\int_a^b f(x) \\, dx = F(b) - F(a) \\]"
+            },
+            {
+                title: "Fundamental Theorem of Algebra (Complex Analysis)",
+                statement: "Every non-constant single-variable polynomial with complex coefficients has at least one complex root."
+            },
+            {
+                title: "Fundamental Theorem of Arithmetic (Number Theory)",
+                statement: "Every integer strictly greater than 1 either is a prime itself or can be factored into a product of prime numbers, and this factorization is unique up to the order of the factors."
+            },
+            {
+                title: "Pythagorean Theorem (Geometry)",
+                statement: "In a right-angled triangle, the square of the length of the hypotenuse \\(c\\) is equal to the sum of the squares of the lengths of the other two sides \\(a\\) and \\(b\\): \\[ a^2 + b^2 = c^2 \\]"
+            },
+            {
+                title: "Zorn's Lemma (Set Theory)",
+                statement: "If every chain (totally ordered subset) in a non-empty partially ordered set has an upper bound, then the set contains at least one maximal element."
+            },
+            {
+                title: "Tychonoff's Theorem (Topology)",
+                statement: "The product of any arbitrary collection of compact topological spaces is compact with respect to the product topology."
+            },
+            {
+                title: "Gödel's First Incompleteness Theorem (Mathematical Logic)",
+                statement: "In any consistent formal system \\(F\\) that is rich enough to express elementary arithmetic, there are statements that are true but unprovable within the system."
+            },
+            {
+                title: "Riesz Representation Theorem (Functional Analysis)",
+                statement: "Let \\(H\\) be a Hilbert space and \\(f\\) a continuous linear functional on \\(H\\). Then there exists a unique vector \\(v \\in H\\) such that for all \\(u \\in H\\): \\[ f(u) = \\langle u, v \\rangle \\]"
+            },
+            {
+                title: "Spectral Theorem for Symmetric Matrices (Linear Algebra)",
+                statement: "If \\(A\\) is a real symmetric \\(n \\times n\\) matrix, then there exists an orthogonal matrix \\(Q\\) and a diagonal matrix \\(D\\) consisting of its real eigenvalues such that: \\[ A = Q D Q^T \\]"
+            },
+            {
+                title: "Green's Theorem (Vector Calculus)",
+                statement: "Let \\(C\\) be a positively oriented, piecewise smooth, simple closed curve bounding a region \\(D\\). Then for functions \\(P(x,y)\\) and \\(Q(x,y)\\): \\[ \\oint_C (P \\, dx + Q \\, dy) = \\iint_D \\left( \\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} \\right) \\, dA \\]"
+            },
+            {
+                title: "Divergence Theorem / Gauss's Theorem (Vector Calculus)",
+                statement: "The surface integral of a vector field \\(\\mathbf{F}\\) over a closed surface \\(\\partial V\\) is equal to the volume integral of the divergence over the region \\(V\\) inside the surface: \\[ \\iint_{\\partial V} \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_V \\nabla \\cdot \\mathbf{F} \\, dV \\]"
+            },
+            {
+                title: "Fubini's Theorem (Measure Theory)",
+                statement: "If a function \\(f(x,y)\\) is integrable on a product measure space \\(X \\times Y\\), then the double integral can be evaluated as an iterated integral: \\[ \\iint_{X \\times Y} f(x,y) \\, d(x,y) = \\int_X \\left( \\int_Y f(x,y) \\, dy \\right) dx \\]"
+            },
+            {
+                title: "Taylor's Theorem (Calculus)",
+                statement: "If \\(f\\) is \\(n\\) times continuously differentiable on \\([a,x]\\) and \\(f^{(n+1)}\\) exists on \\((a,x)\\), the function can be expanded as: \\[ f(x) = \\sum_{k=0}^n \\frac{f^{(k)}(a)}{k!} (x-a)^k + R_n(x) \\]"
+            },
+            {
+                title: "Intermediate Value Theorem (Real Analysis)",
+                statement: "If \\(f\\) is a continuous function over the interval \\([a, b]\\), it takes on every value between \\(f(a)\\) and \\(f(b)\\) at some point within the interval."
+            },
+            {
+                title: "Mean Value Theorem (Real Analysis)",
+                statement: "If \\(f\\) is continuous on \\([a, b]\\) and differentiable on \\((a, b)\\), there exists at least one point \\(c \\in (a, b)\\) such that the instantaneous rate of change equals the average rate of change: \\[ f'(c) = \\frac{f(b) - f(a)}{b - a} \\]"
+            },
+            {
+                title: "Hilbert's Nullstellensatz (Algebraic Geometry)",
+                statement: "Let \\(k\\) be an algebraically closed field. For any ideal \\(I\\) in the polynomial ring \\(k[x_1, \\dots, x_n]\\), the ideal of polynomials that vanish on the zero locus of \\(I\\) is exactly the radical of \\(I\\): \\[ I(V(I)) = \\sqrt{I} \\]"
+            },
+            {
+                title: "Implicit Function Theorem (Multivariable Calculus)",
+                statement: "If a continuously differentiable function \\(F(x, y) = 0\\) has a non-zero partial derivative with respect to \\(y\\) at \\((a,b)\\), then there exists a local continuously differentiable function \\(y = f(x)\\) such that \\(F(x, f(x)) = 0\\)."
+            },
+            {
+                title: "Inverse Function Theorem (Multivariable Calculus)",
+                statement: "If a continuously differentiable mapping \\(f\\) has a non-zero Jacobian determinant at a point \\(a\\), then \\(f\\) is locally invertible in a neighborhood of \\(a\\), and its inverse is continuously differentiable."
+            },
+            {
+                title: "Banach Fixed-Point Theorem (Metric Spaces)",
+                statement: "Let \\((X, d)\\) be a non-empty complete metric space with a contraction mapping \\(T : X \\to X\\). Then \\(T\\) admits a unique fixed point \\(x^* \\in X\\) such that \\(T(x^*) = x^*\\)."
+            },
+            {
+                title: "Arzelà-Ascoli Theorem (Functional Analysis)",
+                statement: "A sequence of continuous real-valued functions defined on a closed and bounded interval of the real line has a uniformly convergent subsequence if and only if the sequence is uniformly bounded and equicontinuous."
+            },
+            {
+                title: "Monotone Convergence Theorem (Measure Theory)",
+                statement: "Let \\(\\{f_n\\}\\) be a sequence of non-negative measurable functions such that \\(f_n(x) \\le f_{n+1}(x)\\) almost everywhere. Then the integral of the limit is the limit of the integrals: \\[ \\lim_{n \\to \\infty} \\int f_n \\, d\\mu = \\int \\lim_{n \\to \\infty} f_n \\, d\\mu \\]"
+            },
+            {
+                title: "Dominated Convergence Theorem (Measure Theory)",
+                statement: "If a sequence of measurable functions \\(\\{f_n\\}\\) converges pointwise to \\(f\\) and is dominated by an integrable function \\(g\\) such that \\(|f_n(x)| \\le g(x)\\), then: \\[ \\lim_{n \\to \\infty} \\int f_n \\, d\\mu = \\int f \\, d\\mu \\]"
+            },
+            {
+                title: "Second Sylow Theorem (Group Theory)",
+                statement: "For any finite group \\(G\\) and any prime \\(p\\), all Sylow \\(p\\)-subgroups of \\(G\\) are conjugate to one another. That is, if \\(P\\) and \\(Q\\) are Sylow \\(p\\)-subgroups, there exists \\(g \\in G\\) such that \\(Q = gPg^{-1}\\)."
+            },
+            {
+                title: "Third Sylow Theorem (Group Theory)",
+                statement: "Let \\(n_p\\) be the number of Sylow \\(p\\)-subgroups of a finite group \\(G\\). Then \\(n_p\\) divides the order of \\(G\\) and satisfies the congruence: \\[ n_p \\equiv 1 \\pmod p \\]"
+            },
+            {
+                title: "First Isomorphism Theorem for Rings (Ring Theory)",
+                statement: "Let \\( \\phi: R \\to S \\) be a ring homomorphism. The kernel of \\( \\phi \\) is an ideal of \\( R \\), the image of \\( \\phi \\) is a subring of \\( S \\), and the quotient ring is isomorphic to the image: \\[ R / \\ker(\\phi) \\cong \\text{im}(\\phi) \\]"
             }
         ];
 
