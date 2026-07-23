@@ -33,14 +33,39 @@
         }
 
         /* GLOBAL STYLES */
+        /* GLOBAL STYLES */
         body {
             font-family: "Times New Roman", Times, serif;
             background-color: var(--bg-color);
+
+            background-image:
+                linear-gradient(
+                    rgba(137, 16, 16, 0.1),
+                    rgba(114, 182, 59, 0.1)
+                ),
+                url("Untitled design.png");
+
+            background-repeat: repeat;
+            background-size: 500px auto;
+            background-position: top left;
+
             color: var(--text-color);
             margin: 0;
             padding: 0;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        [data-theme="dark"] body {
+            background-image:
+                linear-gradient(
+                    rgba(30, 30, 30, 0.1),
+                    rgba(30, 30, 30, 0.1)
+                ),
+                url("Untitled design.png");
+
+            background-repeat: repeat;
+            background-size: 800px auto;
         }
 
         /* STICKY NAVIGATION MENU */
@@ -126,6 +151,16 @@
             background-color: #222;
         }
 
+        /* HEADER BOX */
+header {
+    max-width: 900px;
+    box-sizing: border-box;
+    background-color: var(--card-bg);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
         /* MAIN CONTENT CONTAINER */
         main {
             max-width: 900px; 
@@ -162,8 +197,8 @@
 
         /* THEOREM STYLING */
         .theorem-container {
-            background-color: var(--nav-bg); 
-            border-left: 5px solid var(--link-color);
+            background-color: var(--card-bg); 
+            /* border-left: 0px solid var(--link-color); */
             padding: 20px 30px;
             margin: 20px auto 40px auto;
             border-radius: 4px;
@@ -175,7 +210,7 @@
             font-size: 1.2rem;
             margin-bottom: 10px;
             display: block;
-            color: var(--link-color);
+            /* color: var(--link-color); */
             font-weight: bold;
         }
 
@@ -243,17 +278,18 @@
         }
 
         /* QUOTE STYLING */
-        .quote-container {
-            font-size: 1.2rem;
-            font-style: italic;
-            padding: 20px;
-            border-top: 2px solid var(--text-color);
-            border-bottom: 2px solid var(--text-color);
-            margin: 50px auto 20px auto;
-            max-width: 80%;
-            background-color: transparent;
-            box-shadow: none;
-        }
+        /* QUOTE BOX */
+.quote-container {
+    font-size: 1.2rem;
+    font-style: italic;
+    background-color: var(--card-bg);
+    margin: 40px 0;
+    padding: 30px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: none;
+}
 
         .quote-author {
             display: block;
@@ -264,11 +300,26 @@
         }
 
         footer {
-            background-color: var(--nav-bg);
-            padding: 20px;
-            margin-top: 50px;
-        }
-    </style>
+    background-color: var(--nav-bg);
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ROUNDED CORNERS FOR ALL BOXES */
+header,
+section,
+.theorem-container,
+.quote-container,
+details,
+.btn,
+.slider,
+.poster-img {
+    border-radius: 30px;
+}
+#about p {
+    text-align: left;
+}
+</style>
 </head>
 <body>
 
@@ -288,7 +339,7 @@
         </div>
     </nav>
 
-    <header style="padding: 40px 20px;">
+    <header>
         <h1>Geru Mejia</h1>
         <p>Mathematics Major & Tutor at UWF</p>
         <a href="https://www.linkedin.com/in/geru-mejia-rojas-a65651353/" target="_blank" class="btn" style="margin-top: 10px;">LinkedIn</a>
