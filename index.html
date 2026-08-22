@@ -33,7 +33,6 @@
         }
 
         /* GLOBAL STYLES */
-        /* GLOBAL STYLES */
         body {
             font-family: "Times New Roman", Times, serif;
             background-color: var(--bg-color);
@@ -152,15 +151,15 @@
         }
 
         /* HEADER BOX */
-header {
-    max-width: 900px;
-    box-sizing: border-box;
-    background-color: var(--card-bg);
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
+        header {
+            max-width: 900px;
+            box-sizing: border-box;
+            background-color: var(--card-bg);
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
         /* MAIN CONTENT CONTAINER */
         main {
             max-width: 900px; 
@@ -198,7 +197,6 @@ header {
         /* THEOREM STYLING */
         .theorem-container {
             background-color: var(--card-bg); 
-            /* border-left: 0px solid var(--link-color); */
             padding: 20px 30px;
             margin: 20px auto 40px auto;
             border-radius: 4px;
@@ -210,7 +208,6 @@ header {
             font-size: 1.2rem;
             margin-bottom: 10px;
             display: block;
-            /* color: var(--link-color); */
             font-weight: bold;
         }
 
@@ -278,18 +275,17 @@ header {
         }
 
         /* QUOTE STYLING */
-        /* QUOTE BOX */
-.quote-container {
-    font-size: 1.2rem;
-    font-style: italic;
-    background-color: var(--card-bg);
-    margin: 40px 0;
-    padding: 30px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    max-width: none;
-}
+        .quote-container {
+            font-size: 1.2rem;
+            font-style: italic;
+            background-color: var(--card-bg);
+            margin: 40px 0;
+            padding: 30px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            max-width: none;
+        }
 
         .quote-author {
             display: block;
@@ -300,26 +296,26 @@ header {
         }
 
         footer {
-    background-color: var(--nav-bg);
-    padding: 20px;
-    margin-top: 50px;
-}
+            background-color: var(--nav-bg);
+            padding: 20px;
+            margin-top: 50px;
+        }
 
-/* ROUNDED CORNERS FOR ALL BOXES */
-header,
-section,
-.theorem-container,
-.quote-container,
-details,
-.btn,
-.slider,
-.poster-img {
-    border-radius: 30px;
-}
-#about p {
-    text-align: left;
-}
-</style>
+        /* ROUNDED CORNERS FOR ALL BOXES */
+        header,
+        section,
+        .theorem-container,
+        .quote-container,
+        details,
+        .btn,
+        .slider,
+        .poster-img {
+            border-radius: 30px;
+        }
+        #about p {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 
@@ -330,6 +326,7 @@ details,
         <a href="#notes">Notes</a>
         <a href="#interesting">Interesting Content</a>
         <a href="#puzzles">Puzzles</a>
+        <a href="#fun-facts">Fun Facts</a>
         
         <div class="theme-switch-wrapper">
             <label class="theme-switch" for="checkbox" title="Toggle Dark Mode">
@@ -359,6 +356,8 @@ details,
                 I enjoy abstract algebra, combinatorics and topology. 
                 Alongside my studies, I work as a mathematics tutor/mentor helping students master coursework. My main goal in life is to help students to understand mathematics.
             </p>
+            <!-- YouTube Channel Button Added Below -->
+            <a href="https://www.youtube.com/" target="_blank" class="btn" style="margin-top: 10px;">YouTube Channel</a>
         </section>
 
         <section id="resume">
@@ -410,8 +409,6 @@ details,
             <h2>Course Notes</h2>
             <p>Here you can find our digitized notes and study materials. Links redirect to Google Drive.</p>
             <ul>
-                <!-- <li><a href="https://drive.google.com/drive/folders/1sVSshdcSrR8KMo2rM9nfffFWnlmzJHFo?usp=sharing" target="_blank">Abstract Algebra</a> exercises and notes</li> -->
-                <!-- <li><a href="https://drive.google.com/drive/folders/18q3MiqB_3FRsUqmY34P9_s0nYyiI8nz3?usp=sharing" target="_blank">Number Theory</a></li> -->
                 <li><a href="https://drive.google.com/drive/folders/1zjmd9VDiQ08OU0v-Sm0iQlmeKLBHcoX5?usp=sharing" target="_blank">Topology</a> exercises and notes</li>
                 <li><a href="https://terrytao.wordpress.com/career-advice/" target="_blank">Career Advice</a> by Terrence Tao</li>
             </ul>
@@ -504,6 +501,23 @@ details,
             </details>
         </section>
 
+        <!-- NEW FUN FACTS SECTION -->
+        <section id="fun-facts">
+            <h2>Fun Facts</h2>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>
+                    <strong>August 2026</strong>
+                    <ol>
+                        <li><!-- Write your August 2026 fun fact here --></li>
+                    </ol>
+                </li>
+                <!-- September 2026 -->
+                <!-- October 2026 -->
+                <!-- November 2026 -->
+                <!-- December 2026 -->
+            </ul>
+        </section>
+
         <!-- RANDOM QUOTE SECTION -->
         <section id="quote-container" class="quote-container">
             <span id="quote-text">"Loading quote..."</span>
@@ -529,7 +543,7 @@ details,
             }
         }
 
-        // RANDOM THEOREM GENERATOR
+        // RANDOM THEOREM GENERATOR (10 new theorems added)
         const theorems = [
             {
                 title: "Lagrange's Theorem (Group Theory)",
@@ -710,6 +724,47 @@ details,
             {
                 title: "First Isomorphism Theorem for Rings (Ring Theory)",
                 statement: "Let \\( \\phi: R \\to S \\) be a ring homomorphism. The kernel of \\( \\phi \\) is an ideal of \\( R \\), the image of \\( \\phi \\) is a subring of \\( S \\), and the quotient ring is isomorphic to the image: \\[ R / \\ker(\\phi) \\cong \\text{im}(\\phi) \\]"
+            },
+            // --- 10 NEW THEOREMS ADDED BELOW ---
+            {
+                title: "Schröder-Bernstein Theorem (Set Theory)",
+                statement: "If there exist injective functions \\(f: A \\to B\\) and \\(g: B \\to A\\) between two sets \\(A\\) and \\(B\\), then there exists a bijective function \\(h: A \\to B\\), meaning \\(A\\) and \\(B\\) have the same cardinality."
+            },
+            {
+                title: "Fermat's Last Theorem (Number Theory)",
+                statement: "No three positive integers \\(a\\), \\(b\\), and \\(c\\) satisfy the equation \\(a^n + b^n = c^n\\) for any integer value of \\(n\\) strictly greater than 2."
+            },
+            {
+                title: "Brouwer Fixed-Point Theorem (Topology)",
+                statement: "Every continuous function from a convex compact subset \\(K\\) of a Euclidean space to \\(K\\) itself has at least one fixed point."
+            },
+            {
+                title: "Dirichlet's Theorem on Arithmetic Progressions (Number Theory)",
+                statement: "For any two positive coprime integers \\(a\\) and \\(d\\), there are infinitely many primes of the form \\(a + nd\\), where \\(n \\ge 0\\)."
+            },
+            {
+                title: "Open Mapping Theorem (Functional Analysis)",
+                statement: "If a continuous linear operator between two Banach spaces is surjective, then it is an open map (i.e., it maps open sets to open sets)."
+            },
+            {
+                title: "Wedderburn's Little Theorem (Abstract Algebra)",
+                statement: "Every finite division ring is necessarily commutative, and therefore is a finite field."
+            },
+            {
+                title: "Kronecker-Weber Theorem (Number Theory)",
+                statement: "Every finite abelian extension of the rational numbers \\(\\mathbb{Q}\\) is a subfield of a cyclotomic field."
+            },
+            {
+                title: "Rouché's Theorem (Complex Analysis)",
+                statement: "If two complex-valued functions \\(f\\) and \\(g\\) are holomorphic inside and on some closed contour \\(C\\), and \\(|g(z)| < |f(z)|\\) on \\(C\\), then \\(f\\) and \\(f + g\\) have the same number of zeros inside \\(C\\)."
+            },
+            {
+                title: "Morera's Theorem (Complex Analysis)",
+                statement: "If a continuous, complex-valued function \\(f\\) defined on an open set \\(D\\) in the complex plane satisfies \\(\\oint_C f(z) \\, dz = 0\\) for every closed piecewise \\(C^1\\) curve \\(C\\) in \\(D\\), then \\(f\\) must be holomorphic on \\(D\\)."
+            },
+            {
+                title: "Gauss-Bonnet Theorem (Differential Geometry)",
+                statement: "For any compact, two-dimensional Riemannian manifold \\(M\\) with boundary \\(\\partial M\\), the integral of the Gaussian curvature \\(K\\) over \\(M\\) plus the integral of the geodesic curvature \\(k_g\\) over \\(\\partial M\\) equals \\(2\\pi \\chi(M)\\), where \\(\\chi(M)\\) is the Euler characteristic."
             }
         ];
 
@@ -728,7 +783,7 @@ details,
             }
         }
 
-        // RANDOM QUOTE GENERATOR
+        // RANDOM QUOTE GENERATOR (10 new quotes added)
         const quotes = [
             { text: "Pure mathematics is, in its way, the poetry of logical ideas.", author: "Albert Einstein" },
             { text: "Mathematics is the most beautiful and most powerful creation of the human spirit.", author: "Stefan Banach" },
@@ -736,7 +791,18 @@ details,
             { text: "A mathematician who is not also something of a poet will never be a complete mathematician.", author: "Karl Weierstrass" },
             { text: "Nature is written in mathematical language.", author: "Galileo Galilei" },
             { text: "There is no branch of mathematics, however abstract, which may not some day be applied to phenomena of the real world.", author: "Nikolai Lobachevsky" },
-            { text: "In mathematics the art of proposing a question must be held of higher value than solving it.", author: "Georg Cantor" }
+            { text: "In mathematics the art of proposing a question must be held of higher value than solving it.", author: "Georg Cantor" },
+            // --- 10 NEW QUOTES ADDED BELOW ---
+            { text: "Mathematics is the queen of the sciences and number theory is the queen of mathematics.", author: "Carl Friedrich Gauss" },
+            { text: "Do not worry about your difficulties in Mathematics. I can assure you mine are still greater.", author: "Albert Einstein" },
+            { text: "If I have seen further it is by standing on the shoulders of Giants.", author: "Isaac Newton" },
+            { text: "Mathematics is a game played according to certain simple rules with meaningless marks on paper.", author: "David Hilbert" },
+            { text: "What is mathematics? It is only a systematic effort of solving puzzles posed by nature.", author: "Shakuntala Devi" },
+            { text: "A mathematician is a device for turning coffee into theorems.", author: "Paul Erdős (Alfréd Rényi)" },
+            { text: "Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country.", author: "David Hilbert" },
+            { text: "There is no royal road to geometry.", author: "Euclid" },
+            { text: "To understand mathematics means to be able to do mathematics.", author: "George Pólya" },
+            { text: "The study of mathematics, like the Nile, begins in minuteness but ends in magnificence.", author: "Charles Caleb Colton" }
         ];
 
         function displayRandomQuote() {
