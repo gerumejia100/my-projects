@@ -31,10 +31,54 @@
         function toggleTheme(checkboxElement) { document.documentElement.toggleAttribute('data-theme', checkboxElement.checked); }
         const theorems = [
             { title: "Lagrange's Theorem (Group Theory)", statement: "For any finite group \\(G\\), the order of every subgroup \\(H\\) divides the order of \\(G\\): \\[ |G| = [G : H] \\cdot |H| \\]" },
+            
             { title: "Fermat's Little Theorem (Number Theory)", statement: "If \\(p\\) is prime, then \\[a^p \\equiv a \\pmod p.\\]" },
+            
             { title: "Euler's Formula (Topology / Graph Theory)", statement: "For any connected planar graph, \\[V - E + F = 2.\\]" },
+            
             { title: "Rank-Nullity Theorem (Linear Algebra)", statement: "For a linear map \\(T: V \\to W\\), \\[\\dim(V) = \\dim(\\ker(T)) + \\dim(\\operatorname{im}(T)).\\]" },
-            { title: "Tychonoff's Theorem (Topology)", statement: "The product of any collection of compact topological spaces is compact in the product topology." }
+            
+            { title: "Tychonoff's Theorem (Topology)", statement: "The product of any collection of compact topological spaces is compact in the product topology." },
+        
+            { title: "Cauchy's Theorem (Group Theory)", statement: "If \\(G\\) is a finite group and a prime \\(p\\) divides \\(|G|\\), then \\(G\\) contains an element of order \\(p\\)." },
+        
+            { title: "Cayley's Theorem (Group Theory)", statement: "Every group is isomorphic to a subgroup of a symmetric group." },
+        
+            { title: "The Fundamental Theorem of Finite Abelian Groups (Group Theory)", statement: "Every finite abelian group is isomorphic to a direct product of cyclic groups of prime-power order." },
+        
+            { title: "The First Isomorphism Theorem (Abstract Algebra)", statement: "If \\(\\varphi:G\\to H\\) is a group homomorphism, then \\[G/\\ker(\\varphi) \\cong \\operatorname{im}(\\varphi).\\]" },
+        
+            { title: "The Fundamental Theorem of Arithmetic (Number Theory)", statement: "Every integer greater than \\(1\\) can be written uniquely, up to the order of the factors, as a product of primes." },
+        
+            { title: "Euclid's Theorem on Infinitely Many Primes (Number Theory)", statement: "There are infinitely many prime numbers." },
+        
+            { title: "Chinese Remainder Theorem (Number Theory)", statement: "If \\(n_1,\\dots,n_k\\) are pairwise coprime positive integers, then the system \\[x\\equiv a_i\\pmod{n_i}\\] has a unique solution modulo \\(n_1\\cdots n_k\\)." },
+        
+            { title: "Wilson's Theorem (Number Theory)", statement: "A positive integer \\(p>1\\) is prime if and only if \\[(p-1)!\\equiv -1\\pmod p.\\]" },
+        
+            { title: "Bezout's Identity (Number Theory)", statement: "For integers \\(a\\) and \\(b\\), there exist integers \\(x\\) and \\(y\\) such that \\[ax+by=\\gcd(a,b).\\]" },
+        
+            { title: "Fundamental Theorem of Algebra (Algebra)", statement: "Every nonconstant polynomial with complex coefficients has at least one complex root." },
+        
+            { title: "Cayley-Hamilton Theorem (Linear Algebra)", statement: "Every square matrix satisfies its own characteristic polynomial. If \\(p(\\lambda)=\\det(\\lambda I-A)\\), then \\[p(A)=0.\\]" },
+        
+            { title: "Spectral Theorem (Linear Algebra)", statement: "Every real symmetric matrix is orthogonally diagonalizable, and every complex Hermitian matrix is unitarily diagonalizable." },
+        
+            { title: "Bolzano-Weierstrass Theorem (Real Analysis)", statement: "Every bounded sequence in \\(\\mathbb{R}^n\\) has a convergent subsequence." },
+        
+            { title: "Heine-Borel Theorem (Real Analysis / Topology)", statement: "A subset of \\(\\mathbb{R}^n\\) is compact if and only if it is closed and bounded." },
+        
+            { title: "Intermediate Value Theorem (Real Analysis)", statement: "If \\(f:[a,b]\\to\\mathbb{R}\\) is continuous and \\(N\\) lies between \\(f(a)\\) and \\(f(b)\\), then there exists \\(c\\in[a,b]\\) such that \\[f(c)=N.\\]" },
+        
+            { title: "Mean Value Theorem (Real Analysis)", statement: "If \\(f\\) is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), then there exists \\(c\\in(a,b)\\) such that \\[f'(c)=\\frac{f(b)-f(a)}{b-a}.\\]" },
+        
+            { title: "Brouwer Fixed-Point Theorem (Topology)", statement: "Every continuous function from a closed ball in \\(\\mathbb{R}^n\\) to itself has at least one fixed point." },
+        
+            { title: "Baire Category Theorem (Analysis / Topology)", statement: "A complete metric space cannot be expressed as a countable union of nowhere dense subsets." },
+        
+            { title: "Hahn-Banach Theorem (Functional Analysis)", statement: "A bounded linear functional defined on a subspace of a normed vector space can be extended to the entire space without increasing its norm." },
+        
+            { title: "Jordan Curve Theorem (Topology)", statement: "Every simple closed curve in \\(\\mathbb{R}^2\\) separates the plane into exactly two connected components, one bounded and one unbounded." }
         ];
         const quotes = [
             { text: "Pure mathematics is, in its way, the poetry of logical ideas.", author: "Albert Einstein" },
