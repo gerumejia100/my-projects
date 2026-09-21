@@ -20,7 +20,8 @@ html {
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
+    /* font-family: "Times New Roman", Times, serif; */
+    font-family: 'DMSerifDisplay', Times;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -296,4 +297,22 @@ footer {
         margin-right: 10px;
         padding: 24px 20px;
     }
+}
+
+/* Regular Weight */
+@font-face {
+  font-family: 'DMSerifDisplay';
+  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: 'DMSerifDisplay';
+  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
