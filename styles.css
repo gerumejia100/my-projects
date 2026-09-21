@@ -1,3 +1,12 @@
+/* At the very top of your CSS file */
+@font-face {
+  font-family: 'DMSerifDisplay';
+  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -21,7 +30,7 @@ html {
 
 body {
     /* font-family: "Times New Roman", Times, serif; */
-    font-family: 'DMSerifDisplay', Times;
+    font-family: 'DMSerifDisplay', 'Times New Roman', Times, serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -299,20 +308,3 @@ footer {
     }
 }
 
-/* Regular Weight */
-@font-face {
-  font-family: 'DMSerifDisplay';
-  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('ttf');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Bold Weight */
-@font-face {
-  font-family: 'DMSerifDisplay';
-  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('ttf');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
