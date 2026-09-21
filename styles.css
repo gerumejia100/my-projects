@@ -1,9 +1,18 @@
-/* At the very top of your CSS file */
+/* DM Serif Display - Regular */
 @font-face {
   font-family: 'DMSerifDisplay';
-  src: url('../fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+  src: url('fonts/DMSerifDisplay-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+/* DM Serif Display - Italic */
+@font-face {
+  font-family: 'DMSerifDisplay';
+  src: url('fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
